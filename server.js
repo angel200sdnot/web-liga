@@ -44,7 +44,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new SteamStrategy({
     returnURL: address + '/auth/steam/return',
     realm: address,
-    apiKey: 'DBDC643CA768279DF0F2B1624C857477'
+    apiKey: 'API KEY'
   },
   function(identifier, profile, done) {
     initialize(profile, (err, user) => {
