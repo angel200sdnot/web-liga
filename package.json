@@ -1,0 +1,60 @@
+{
+  "name": "web-liga",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "babel": {
+    "presets": [
+      "next/babel"
+    ],
+    "ignore": [
+      ".next",
+      "build",
+      "node_modules",
+      ".gitignore",
+      "LICENSE",
+      "package.json",
+      "Procfile"
+    ]
+  },
+  "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "build": "node_modules/.bin/babel ./ --out-dir build -s --ignore node_modules",
+    "dev": "npm run clean && npm run build && npm run watch",
+    "start": "NODE_ENV=production node build/server.js",
+    "watch": "node_modules/.bin/babel-watch --exclude components --exclude pages --exclude .next build/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angel200sdnot/web-liga.git"
+  },
+  "author": "Angel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angel200sdnot/web-liga/issues"
+  },
+  "homepage": "https://github.com/angel200sdnot/web-liga#readme",
+  "dependencies": {
+    "async": "^2.1.4",
+    "axios": "^0.15.3",
+    "babel-cli": "^6.18.0",
+    "body-parser": "^1.15.2",
+    "connect-mongo": "^1.3.2",
+    "csurf": "^1.9.0",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "mongoose": "^4.7.6",
+    "next": "^2.0.0-beta.13",
+    "passport": "^0.3.2",
+    "passport-steam": "^1.0.7",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.4",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-watch": "^2.0.5",
+    "morgan": "^1.7.0"
+  }
+}
